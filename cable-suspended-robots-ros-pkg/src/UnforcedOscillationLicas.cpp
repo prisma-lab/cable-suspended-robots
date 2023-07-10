@@ -43,7 +43,7 @@ UnforcedOscillation::UnforcedOscillation() {
     std::vector<std::string> joints_name_vec;                               // Joint names [rad] vector
     std::vector<double> joints_pos_vec;                                     // Joint position [rad] vector
     joints_name_vec.insert(joints_name_vec.end(), {"revolute_joint_z","revolute_joint_x","revolute_joint_y","shoulder_joint_z","shoulder_joint_x","shoulder_joint_y"});
-    joints_pos_vec.insert(joints_pos_vec.end(), {0, 0.1987, 0, 0, -0.1987, 0});      // Change joints' initial state accordingly to the desired experiment [rad]
+    joints_pos_vec.insert(joints_pos_vec.end(), {0, 0.1987, 0.08, 0, -0.1987, -0.08});      // Change joints' initial state accordingly to the desired experiment [rad]
 
     // Configuration of the service
     configSrv_.request.joint_names = joints_name_vec;                       // Configuring the server with joints name list
