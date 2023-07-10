@@ -16,25 +16,18 @@ The code was tested with Ubuntu 20.04, and ROS Noetic. Different OS and ROS vers
 
 `sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers`
 
-### Clone the following packages
-
-```cd <CATKIN_WS_DIR>/src```
-
-
 ### Compile
-
-`catkin_make --only-pkg-with-deps kdl_ros_control`
 
 `catkin_make -DCATKIN_WHITELIST_PACKAGES=""`
 
 ### Run simulation CRANEbot
 
-`roslaunch cable-suspended-robots cranebot.launch`
+`roslaunch cable-suspended-robots-ros-pkg cranebot.launch`
 
-`rosrun cable-suspended-robots armsInducedCranebot.launch`
+`rosrun cable-suspended-robots-ros-pkg armsInducedOscillationCranebot.launch`
 
 ### Run simulation LiCAS
 
-`roslaunch cable-suspended-robots licas.launch`
+`roslaunch cable-suspended-robots-ros-pkg licas.launch`
 
-`rosrun cable-suspended-robots armsInducedLicas.launch`
+`rosrun cable-suspended-robots-ros-pkg unforcedOscillationLicas.launch`
