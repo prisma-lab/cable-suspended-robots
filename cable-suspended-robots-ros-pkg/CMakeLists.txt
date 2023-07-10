@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(cable-suspended-robots-ros-pkg)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++17)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -11,6 +11,9 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   std_msgs
 )
+
+find_package(Eigen3 REQUIRED)
+
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -117,6 +120,7 @@ catkin_package(
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${Eigen3_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -134,6 +138,8 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/cable-suspended-robots-ros-pkg_node.cpp)
 
+add_executable(UnforcedOscillationLicas src/UnforcedOscillationLicas.cpp)
+
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -148,6 +154,8 @@ include_directories(
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
+
+target_link_libraries(UnforcedOscillationLicas ${catkin_LIBRARIES})
 
 #############
 ## Install ##
@@ -203,3 +211,14 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+include (FindPkgConfig)
+if (PKG_CONFIG_FOUND)
+	pkg_check_modules(GAZEBO gazebo)
+endif()
+
+include_directories(${GAZEBO_INCLUDE_DIRS})
+link_directories(${GAZEBO_LIBRARY_DIRS})
+add_library(ShouldersControlPlugin SHARED gazebo/ShouldersControlPlugin.cpp)
+target_link_libraries(ShouldersControlPlugin ${GAZEBO_LIBRARIES} ${Boost_LIBRARIES})
+
