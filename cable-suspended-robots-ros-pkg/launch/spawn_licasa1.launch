@@ -35,7 +35,7 @@
 		  -J LiCAS_A1_q2_3 0.0
 		  -J LiCAS_A1_q2_4 0.0
 		  -model LiCAS_A1" />
-    <node name="joint_state_publisher" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" /> 
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" /> 
 
 	<!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/> -->
           
