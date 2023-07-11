@@ -1,27 +1,5 @@
 #include "trajectoryGeneration.hpp"
 
-// void cubicVelTraj(std::vector<double>& t, std::vector<double>& s, std::vector<double>& sDot, std::vector<double>& sDotDot, 
-//     double dt, double tFinal, double sInit, double sFinal, double sDotInit, double sDotFinal) {
-
-//     double a0, a1, a2, a3;                                                      // Coefficient of the polynomial
-//     int nSamples;
-//     nSamples = (int)(tFinal/dt);                                                // Compute number of samples
-
-//     a0 = sInit;                                                                 // Compute terms of the polynomial
-//     a1 = sDotInit;
-//     a3 = (sDotFinal*tFinal - 2*sFinal + a1*tFinal + 2*a0)/pow(tFinal,3);
-//     a2 = (sFinal - a3*pow(tFinal,3) - a1*tFinal - a0)/pow(tFinal,2);
-//     t.push_back(0);                                                             // First time value
-
-//     for (int k=0; k<nSamples; k++) {                                            // For-loop for the generation of the trajectory
-//         if (k!=0) t.push_back(t[k-1] + dt);                                     // Time vector
-//         s.push_back(a3*pow(t[k],3) + a2*pow(t[k],2) + a1*t[k] + a0);            // Zero-derivative
-//         sDot.push_back(3*a3*pow(t[k],2) + 2*a2*t[k] + a1);                      // First derivative
-//         sDotDot.push_back(6*a3*t[k] + 2*a2);                                    // Second derivative
-//     }
-// }
-
-
 // Polynomial cubic trajectory function
 void cubicVelTraj(std::vector<double>& t, std::vector<double>& s, std::vector<double>& sDot, std::vector<double>& sDotDot, 
     double dt, double tFinal, double sInit, double sFinal, double sDotInit, double sDotFinal) {
