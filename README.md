@@ -22,12 +22,25 @@ The code was tested with Ubuntu 20.04, and ROS Noetic. Different OS and ROS vers
 
 ### Run simulation CRANEbot
 
+To launch the simulation of the cable-suspended robot hanging from a crane called CRANEbot
+
 `roslaunch cable-suspended-robots-ros-pkg cranebot.launch`
+
+To generate an arms-induced oscillation around the vertical axis
 
 `rosrun cable-suspended-robots-ros-pkg armsInducedOscillationCranebot.launch`
 
+To generate an unforced oscillation around the Y axis
+
+`rosrun cable-suspended-robots-ros-pkg unforcedOscillationCranebot.launch`
+
+
 ### Run simulation LiCAS
 
-`roslaunch cable-suspended-robots-ros-pkg licas.launch`
+To launch the simulation of the cable-suspended robot hanging from a drone called LiCAS A1
+
+`roslaunch cable-suspended-robots-ros-pkg licasa1.launch`
+
+To generate an unforced oscillation in a X-Y combined plane
 
 `rosrun cable-suspended-robots-ros-pkg unforcedOscillationLicas.launch`
