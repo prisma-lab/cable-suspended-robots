@@ -118,7 +118,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+include
   ${catkin_INCLUDE_DIRS}
   ${Eigen3_INCLUDE_DIRS}
 )
@@ -139,6 +139,8 @@ include_directories(
 # add_executable(${PROJECT_NAME}_node src/cable-suspended-robots-ros-pkg_node.cpp)
 
 add_executable(UnforcedOscillationLicas src/UnforcedOscillationLicas.cpp)
+add_executable(UnforcedOscillationCranebot src/UnforcedOscillationCranebot.cpp)
+add_executable(ArmsInducedOscillationCranebot src/ArmsInducedOscillationCranebot.cpp src/trajectoryGeneration.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -156,6 +158,8 @@ add_executable(UnforcedOscillationLicas src/UnforcedOscillationLicas.cpp)
 # )
 
 target_link_libraries(UnforcedOscillationLicas ${catkin_LIBRARIES})
+target_link_libraries(UnforcedOscillationCranebot ${catkin_LIBRARIES})
+target_link_libraries(ArmsInducedOscillationCranebot ${catkin_LIBRARIES} ${Eigen3_LIBRARIES})
 
 #############
 ## Install ##
