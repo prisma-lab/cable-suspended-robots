@@ -43,7 +43,7 @@ UnforcedOscillation::UnforcedOscillation() {
     std::vector<std::string> joints_name_vec;                               // Joint names [rad] vector
     std::vector<double> joints_pos_vec;                                     // Joint position [rad] vector
     joints_name_vec.insert(joints_name_vec.end(), {"cables_joint_z","cables_joint_x","cables_joint_y","platform_joint_x","platform_erb145_joint_A","platform_erb145_joint_B"});
-    joints_pos_vec.insert(joints_pos_vec.end(), {0.0, 0.0, 0.0, 0.0, 0, 0});      // [rad]
+    joints_pos_vec.insert(joints_pos_vec.end(), {0.0, 0.0, 0.08, 0.0, 0, 0});      // [rad]
 
     // Configuration of the service
     configSrv_.request.joint_names = joints_name_vec;                       // Configuring the server with joints name list
@@ -82,9 +82,6 @@ void UnforcedOscillation::generateOscillation() {
     // Define Sampling rate
     ros::Rate rate(50);
 
-    // // Initialization for data saving (to be inserted)
-    // std::ofstream simdatafile;
-
     // Initialization for time sampling
     double startTime = gazeboTime_;
     double elapsedTime = 0; 
@@ -103,44 +100,6 @@ void UnforcedOscillation::generateOscillation() {
         oldElapsed = elapsedTime;    
     }
     std::cout << "Starting pose successfully modified" << std::endl << "Unforced oscillation generated" << std::endl;
-
-    // std::vector<double> PositionY;
-    // std::vector<double> timeVec;
-
-    // double start_time = _gazeboTime;
-    // double elapsed_time;
-
-    // for (int i = 0; i < 40000; i++) {
-
-    //     std::cout << i <<std::endl;
-
-    //     elapsed_time = _gazeboTime - start_time;
-
-    //     PositionY.push_back(_platform_link_pose[1]);
-    //     // PositionY.push_back(3.837*sin(_joint_position[0]));
-        
-    //     timeVec.push_back(elapsed_time);
-
-    //     r.sleep();
-
-    // }
-
-    // std::cout << "END" << std::endl;
-
-    // std::ofstream output_file("/home/giancarlo/ros_ws/src/cable_suspended_robotics/src/cranebot/doublePendModelCranebot.txt", std::ofstream::out);
-
-    // if (output_file.is_open()) {
-    //     std::cout << "FILE OPENED" << std::endl;
-
-    //     for (int i=0; i<PositionY.size(); i++) {
-    //         output_file << timeVec[i] << " " << PositionY[i] << "\n";
-    //     }
-    //     output_file.close();
-    // }
-    // else std::cout << "Problem with opening file";
-
-    // // Shutdown ros
-    // ros::shutdown();
 }
 
 
