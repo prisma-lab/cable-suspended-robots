@@ -18,29 +18,29 @@ The code was tested with Ubuntu 20.04, and ROS Noetic. Different OS and ROS vers
 
 ### Compile
 
-`catkin_make -DCATKIN_WHITELIST_PACKAGES=""`
+`catkin_make UnforcedOscillationLicas UnforcedOscillationCranebot ArmsInducedOscillationCranebot`
 
 ### Run simulation CRANEbot
 
-To launch the simulation of the cable-suspended robot hanging from a crane called CRANEbot
+To start the simulation of the cable-suspended robot hanging from a crane called CRANEbot, launch:
 
 `roslaunch cable-suspended-robots-ros-pkg cranebot.launch`
 
-To generate an arms-induced oscillation around the vertical axis
+Once the simulation has started, in another terminal type the following command to generate an arms-induced oscillation around the vertical axis:
 
 `rosrun cable-suspended-robots-ros-pkg armsInducedOscillationCranebot.launch`
 
-To generate an unforced oscillation around the Y axis
+while to generate an unforced oscillation around the Y axis just run:
 
 `rosrun cable-suspended-robots-ros-pkg unforcedOscillationCranebot.launch`
 
 
 ### Run simulation LiCAS
 
-To launch the simulation of the cable-suspended robot hanging from a drone called LiCAS A1
+To launch the simulation of the cable-suspended robot hanging from a drone called LiCAS A1, type:
 
 `roslaunch cable-suspended-robots-ros-pkg licasa1.launch`
 
-To generate an unforced oscillation in a X-Y combined plane
+In another terminal run the following command to generate an unforced oscillation in a X-Y combined plane:
 
 `rosrun cable-suspended-robots-ros-pkg unforcedOscillationLicas.launch`
