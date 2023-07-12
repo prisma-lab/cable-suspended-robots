@@ -62,9 +62,6 @@
 <xacro:property name="inertiaCablesPulleysX" value="35.37" />
 <xacro:property name="inertiaCablesPulleysY" value="58.23" />
 <xacro:property name="inertiaCablesPulleysZ" value="5.807" />
-<xacro:property name="inertiaPlatform">
-        <inertia ixx="0.001" ixy="0.0" ixz="0.0" iyy="0.001" iyz="0.0" izz="0.001"/> 
-</xacro:property>
 <xacro:property name="inertiaArmsLink1">
     <inertia ixx="3.53e-2" ixy="0" ixz="0" iyy="3.01e-2" iyz="9.04e-3" izz="1.87e-2"/>
 </xacro:property>
