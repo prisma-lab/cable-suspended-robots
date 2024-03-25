@@ -28,11 +28,11 @@ To start the simulation of the cable-suspended robot hanging from a crane called
 
 Once the simulation has started, in another terminal type the following command to generate an arms-induced oscillation around the vertical axis:
 
-`rosrun cable-suspended-robots-ros-pkg armsInducedOscillationCranebot.launch`
+`rosrun cable-suspended-robots-ros-pkg ArmsInducedOscillationCranebot`
 
 while to generate an unforced oscillation around the Y axis just run:
 
-`rosrun cable-suspended-robots-ros-pkg unforcedOscillationCranebot.launch`
+`rosrun cable-suspended-robots-ros-pkg UnforcedOscillationCranebot`
 
 
 ### Run simulation LiCAS
@@ -43,4 +43,4 @@ To launch the simulation of the cable-suspended robot hanging from a drone calle
 
 In another terminal run the following command to generate an unforced oscillation in a X-Y combined plane:
 
-`rosrun cable-suspended-robots-ros-pkg unforcedOscillationLicas.launch`
+`rosrun cable-suspended-robots-ros-pkg UnforcedOscillationLicas`
