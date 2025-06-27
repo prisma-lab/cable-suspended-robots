@@ -2,7 +2,7 @@
 
 Environment and source code to simulate cable-suspended dual-arm manipulators developed in the paper:
 
-*[G. D'Ago](), [M. Selvaggio](http://wpage.unina.it/mario.selvaggio/index.html), [A. Suarez](), [F. J. Gañán Onieva](), [L. R. Buonocore](), [M. Di Castro](), [V. Lippiello](http://wpage.unina.it/lippiell/), [A. Ollero](https://grvc.us.es/aollero/home_en.html), [F. Ruggiero](http://www.fabioruggiero.name/web/index.php/en/) "Modelling and identification methods for simulation of cable-suspended dual-arm robotic systems", in IEEE Robotics and Automation Letters, submitted.* 
+*[G. D'Ago](), [M. Selvaggio](http://wpage.unina.it/mario.selvaggio/index.html), [A. Suarez](), [F. J. Gañán Onieva](), [L. R. Buonocore](), [M. Di Castro](), [V. Lippiello](http://wpage.unina.it/lippiell/), [A. Ollero](https://grvc.us.es/aollero/home_en.html), [F. Ruggiero](http://www.fabioruggiero.name/web/index.php/en/) "Modelling and identification methods for simulation of cable-suspended dual-arm robotic systems", in Robotics and Autonomous Systems Volume 175, May 2024, 104643.* 
 
 
 [![Cable Suspended Robots](gazeboCranebot.png)]()
